@@ -16,7 +16,7 @@ app = FastAPI()
 def create_gcs_client():
     credentials_info = json.loads(os.environ.get('GOOGLE_APPLICATION_CREDENTIALS_JSON'))
     credentials = service_account.Credentials.from_service_account_info(credentials_info)
-    return storage.Client(credentials=credentials, project=credentials_info['project_id'])
+    return storage.Client(credentials=credentials, project=credentials_info['groovy-facet-278301'])
 
 # Fonction pour télécharger un fichier depuis GCS (pour le tokenizer)
 def download_blob_to_tempfile(bucket_name, source_blob_name):
@@ -31,7 +31,7 @@ def download_blob_to_tempfile(bucket_name, source_blob_name):
 # Chargement du modèle et du tokenizer
 def load_model_and_tokenizer():
     bucket_name = "p7-mlruns"
-    model_blob_name = "LTSM_Model_Glove/"  # Note: pas besoin de "saved_model.pb" pour tf.saved_model.load
+    model_blob_name = "LTSM_Model_Glove"  # Note: pas besoin de "saved_model.pb" pour tf.saved_model.load
     tokenizer_blob_name = "tokenizer_glove.pickle"
 
     # Pour TensorFlow, construisez le chemin GCS complet du modèle
