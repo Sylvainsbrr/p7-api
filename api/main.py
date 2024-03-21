@@ -31,7 +31,7 @@ def download_blob_to_tempfile(bucket_name, source_blob_name):
 # Chargement du modèle et du tokenizer
 def load_model_and_tokenizer():
     bucket_name = "p7-mlruns"
-    model_blob_name = "LTSM_Model_Glove"  # Note: pas besoin de "saved_model.pb" pour tf.saved_model.load
+    model_blob_name = "LTSM_Model_Glove/"  # Note: pas besoin de "saved_model.pb" pour tf.saved_model.load
     tokenizer_blob_name = "tokenizer_glove.pickle"
 
     # Pour TensorFlow, construisez le chemin GCS complet du modèle
