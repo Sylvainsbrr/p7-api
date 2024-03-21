@@ -31,7 +31,7 @@ def download_blob_to_tempfile(bucket_name, source_blob_name):
 # Charger le modèle et le tokenizer
 def load_model_and_tokenizer():
     bucket_name = "p7-mlruns"
-    model_blob_name = "LTSM_Model_Glove"
+    model_blob_name = "LTSM_Model_Glove/"
     tokenizer_blob_name = "tokenizer_glove.pickle"
 
     model_dir = download_blob_to_tempfile(bucket_name, model_blob_name + "saved_model.pb")  # Assurez-vous du chemin correct
