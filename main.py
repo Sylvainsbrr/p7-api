@@ -8,12 +8,12 @@ from fastapi.concurrency import run_in_threadpool
 app = FastAPI()
 
 # Load the tokenizer
-tokenizer_path = '../model/tokenizer_glove.pickle'
+tokenizer_path = 'model/tokenizer_glove.pickle'
 with open(tokenizer_path, 'rb') as handle:
     tokenizer = pickle.load(handle)
 
 # Load the TensorFlow SavedModel
-model_path = '../model/LTSM_Model_Glove'
+model_path = 'model/LTSM_Model_Glove'
 model = tf.saved_model.load(model_path)
 infer = model.signatures["serving_default"]  # Adjust if your model has a different signature
 
