@@ -59,3 +59,4 @@ async def create_item(item: Item):
     prediction = await run_in_threadpool(model.predict, padded_sequence)
     pred_class = (prediction > 0.5).astype(int)
     return {"prediction": int(pred_class[0][0])}
+
